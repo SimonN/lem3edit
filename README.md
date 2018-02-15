@@ -14,7 +14,9 @@ Build instructions
 * Optionally, install [CMake](https://cmake.org/); alternatively,
     build manually (see further down).
 
-**With CMake,** start in lem3edit's root directory, then enter:
+### Building with CMake
+
+Start in lem3edit's root directory, then enter:
 ```
 mkdir build
 cd build
@@ -24,9 +26,14 @@ make
 This produces an executable `lem3edit` or `lem3edit.exe` in `build/`.
 This executable should be run using lem3edit's root directory
 for its working directory, e.g., by `cd ..`, then `build/lem3edit`.
-If something goes wrong, delete the entire `build/` directory and start over.
 
-**Manual build:** If you do not wish to use CMake,
-give to your C++ compiler all `*.cpp` and `*.c` files in `src/` and link to
-`SDL2main` and `SDL2`.
+* If something goes wrong, delete the entire `build/` directory and start over.
+* To build with debugging symbols, replace `cmake ..` in the build
+    instructions above with `cmake -DCMAKE_BUILD_TYPE=Debug ..`.
+
+### Building manually
+
+If you do not wish to use CMake, give to your C++ compiler all
+`*.cpp` and `*.c` files in `src/`
+and link against `SDL2main`, `SDL2`, and `stdc++fs`.
 
